@@ -21,6 +21,11 @@ pipeline {
 				sh "./gradlew test"
 			}
 		}
+		stage("Deliver") {
+			steps {
+				sh "./gradlew bootJar"
+			}
+		}
 	}
 	post {
         always {
